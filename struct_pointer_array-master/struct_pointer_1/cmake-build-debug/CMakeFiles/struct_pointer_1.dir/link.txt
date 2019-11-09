@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/struct_pointer_1.dir/main.c.o  -o struct_pointer_1 

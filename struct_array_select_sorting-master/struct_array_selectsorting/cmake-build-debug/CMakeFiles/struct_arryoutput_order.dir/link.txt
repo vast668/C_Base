@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/struct_arryoutput_order.dir/main.c.o  -o struct_arryoutput_order 

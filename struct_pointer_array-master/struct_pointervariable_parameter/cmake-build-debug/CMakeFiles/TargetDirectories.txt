@@ -1,0 +1,3 @@
+/home/vast/CLionProjects/struct/struct_pointervariable_parameter/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/vast/CLionProjects/struct/struct_pointervariable_parameter/cmake-build-debug/CMakeFiles/struct_pointervariable_parameter.dir
+/home/vast/CLionProjects/struct/struct_pointervariable_parameter/cmake-build-debug/CMakeFiles/edit_cache.dir
