@@ -1,2 +1,2 @@
 # C_Base
-C language applets
+C language applets, Review by an author.
