@@ -70,7 +70,6 @@ void append(FILE *source, FILE *dest)
     static char temp[BUFSIZE];
     while ((bytes = fread(temp, sizeof(char), BUFSIZ, source)) > 0)
         fwrite(temp, sizeof(char), bytes, dest);
-
 }
 
 char * s_gets(char *st, int n)

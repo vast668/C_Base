@@ -14,7 +14,7 @@ int main()
             continue;
         if (islower(ch))
             switch (ch){
-                case 'a':
+                case ('a' | 'd' | 'e'):
                     printf("a\n");
                     break;
                 case 'b':
