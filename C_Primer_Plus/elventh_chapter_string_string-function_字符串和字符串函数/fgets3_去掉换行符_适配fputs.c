@@ -28,3 +28,9 @@ int main(void)
     return 0;
 }
 
+/*
+此demo解决的问题是：fgets会将换行符写入buffer，if(words[i] == '\n' 语句会将换行符改写成结束符)
+
+从而适配puts()函数！！！
+*/
+

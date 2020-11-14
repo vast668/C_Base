@@ -21,28 +21,3 @@ int main(void)
 }
 
 
-#if 0
-int main(void)
-{
-    const char * orig = WORDS;
-    char copy[SIZE] = "Be the best that you are";
-    char * ps;
-    puts(orig);
-    puts(copy);
-    ps = strcpy(copy+7, orig);
-    puts(copy);
-    puts(ps);
-
-
-    return 0;
-}
-
-/*
-./a.out 
-beats
-Be the best that you are
-Be the beats                //将空字符也拷贝进来了
-beats
-
-*/
-#endif

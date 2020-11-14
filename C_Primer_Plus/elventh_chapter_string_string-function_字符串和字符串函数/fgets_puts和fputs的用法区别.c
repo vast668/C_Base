@@ -1,16 +1,16 @@
 #include <stdio.h>
 
-#define STLEN 14
+#define STLEN 24
 int main(void)
 {
     char words[STLEN];
     puts("Enter a string, please");
     fgets(words, STLEN, stdin);     //是有换行符的 \n
     printf("Your string twice (puts(), then fputs()): \n");
-    puts(words);
-    fputs(words, stdout);       
+    puts(words);        //puts给字符串添加了一个换行符，puts()将字符串s和末尾换行符写入标准输出。
+    fputs(words, stdout); //fputs不会添加换行符
     puts("Enter another string, Please");
-    fgets(words, STLEN, stdin);     //加入了结束符  \0
+    fgets(words, STLEN, stdin);     //加入了结束符  \0，超过了预定长度STLEN
     printf("Your string twice (puts(), then fputs()):\n");
     puts(words);
     fputs(words, stdout);
@@ -20,12 +20,11 @@ int main(void)
 }
 
 /*
-./a.out 
 Enter a string, please
 jiku wang
 Your string twice (puts(), then fputs()): 
 jiku wang           
-
+            //这里有换行符
 jiku wang
 Enter another string, Please
 dfdsafasfdasfdsaf dfasfasd
