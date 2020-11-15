@@ -9,6 +9,7 @@ typedef struct fish {
 
 int main()
 {
+    char * p = "wang_jikuo";
     Fish snappy = {
         "snappy",
         "piranha",
@@ -16,15 +17,22 @@ int main()
         4,
     };
     // printf("%p\n", snappy);     //这是错误的，结构体的名字是void *类型的
+    printf("p               =%p\n", p);             //静态存储区的地址
     printf("&snappy         =%p\n", &snappy);
     printf(" snappy.name    =%p\n", snappy.name);   //字符串常量存储在静态存储区
     printf("&snappy.name    =%p\n", &snappy.name);  //这是结构体中name指针变量的地址，等于结构体的地址
-
+    
 
     return 0;
 }
 
 /*
+p               =0x7ff7635fe004
+&snappy         =0x7fffdcc36ac0
+ snappy.name    =0x7ff7635fe00f
+&snappy.name    =0x7fffdcc36ac0
+
+
 为什么结构体的名称不是指针
 https://stackoverflow.com/questions/63503142/why-struct-name-is-not-a-pointer-in-c
 没有得到官方正确的回答，但得到以下几点：
