@@ -1,0 +1,31 @@
+静态库：
+
+gcc -c encrypt.c -o encrypt.o
+
+gcc -c message_hider.c -o checksum.o
+
+ar -rcs libhfsecurity.a encrypt.o checksum.o
+
+r：表示如果.a文件存在就更新它
+c：表示创建文档时步显示反馈信息
+s：告诉ar要在.a文件开头建立索引
+
+====================================
+
+.a文件都是libxxx.a的形式
+
+将.a文件保存在/usr/local/lib中，也可以放在自定义的目录库中
+
+
+gcc test_code.c -lhfsecurity -o test_code
+
+如果要使用多个存档，可以设置多个-l选项
+hfsecurity叫编译器取去找一个叫libhfsecurity.a的存档
+
+gcc test_code.c -L/my_lib -lhfsecurity -o test_code
+
+-L：指定库的路径
+
+===================================
+
+

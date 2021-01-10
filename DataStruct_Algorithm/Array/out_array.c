@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+int i_static = 0;
 int main(int argc, char *argv[])
 {
     int i = 0;
@@ -12,6 +13,7 @@ int main(int argc, char *argv[])
     printf("arr[2]  is %p\n", &arr[2]);     //0x7fffee4f5374
     printf("arr[1]  is %p\n", &arr[1]);     //0x7fffee4f5370
     printf("arr[0]  is %p\n", &arr[0]);     //0x7fffee4f536c  
+    printf("&i_static      is %p\n", &i_static);
 
     return 0;
 }

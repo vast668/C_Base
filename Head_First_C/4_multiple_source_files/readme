@@ -1,0 +1,32 @@
+encrypt中的函数声明放在头文件中
+
+
+message_hider.c中引用encrypt的头文件
+
+
+编译命令为：
+    gcc message_hider.c encrypt.c -o message_hider
+
+
+
+==============
+
+
+makefile是本次工程的编译文件
+
+纠正认知错误：makefile文件的执行不是 ./makefile 而是make + 目标
+
+make是一个命令
+
+为什么要用tab键？
+
+make之父解释：
+    程序运行了，于是就保存下来了，几个星期之后，make拥有了几个用户，又不愿破坏代码的基本结构。。。
+
+    很遗憾后来的事情，你都知道了。
+
+
+make一般用来编译代码，但也可以用它充当命令行下的安装程序或源代码控制工具
+
+事实上，任何可以在命令行中执行的任务，都可以用make来做
+

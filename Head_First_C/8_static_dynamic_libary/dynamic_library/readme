@@ -1,0 +1,76 @@
+先说静态库的操作
+
+gcc -c hfcal.c -o hfcal.o
+
+gcc -c elliptical.c -o elliptical.o
+
+ar rcs /usr/local/lib/libhfcal.a hfcal.o        //将hfcal.o这个目标文件归档，放在指定的目录下
+
+
+//gcc elliptical.o -L /usr/local/lib/ -lhfcal.a -o elliptical //库的名字后面不要加.a的后缀
+
+gcc elliptical.o -L/usr/local/lib/ -lhfcal -o elliptical
+
+./elliptical
+
+
+创建动态库
+
+
+ gcc -I/usr/local/include/ -fPIC -c hfcal.c -o hfcal.o
+
+ -I：头文件所在目录路径
+
+ 创建动态库
+
+(1)首先创建目标文件：
+
+ gcc -I/usr/local/include/ -fPIC -c hfcal.c -o hfcal.o
+
+
+(2)创建方法：
+
+gcc -shared hfcal.o -o /usr/local/lib/libhfcal.so
+
+
+(3)编译程序
+
+gcc -I/usr/local/include -c elliptical.c -o elliptical.o
+
+
+gcc elliptical.o -L/usr/local/lib/ -lhfcal -o elliptical
+
+./elliptical 
+./elliptical: error while loading shared libraries: libhfcal.so: cannot open shared object file: No such file or directory
+
+出错的原因是：/usr/local/lib不是标准的路径，故需要附加环境变量
+
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+
+./elliptical 
+Weight: 115.20 lbs
+Distance: 11.30 miles
+Calories burned: 1028.39 cal
+
+=================================
+(4)改写动态库（不改名）
+
+gcc -c -fPIC hfcal_UK.c -o hfcal.o
+
+gcc -shared hfcal.o -o /usr/local/lib/libhfcal.so	//名字没有修改，但里边的目标代码修改了
+
+直接运行
+
+./elliptical 
+Weight: 115.20 kg
+Distance: 11.30 km
+Calories burned: 1028.39 cal
+
+
+发现单位改变了
+
+只修改动态库，没有编译 elliptical代码，完成了单位的修改
+
+体现动态库的能力
+
