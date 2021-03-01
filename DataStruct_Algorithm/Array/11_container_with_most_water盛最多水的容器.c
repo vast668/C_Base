@@ -1,37 +1,34 @@
 #include <stdio.h>
 
-int maxArea(int * nums, int size_num);
+int maxArea(int * height, int heightSize);
 int main()
 {
-    int max = 0;
+    int max_value = 0;
     int num[] = {3, 1, 8, 9, 18};
     
-    max = maxArea(num, 5); 
-    printf("max area is %d\n", max);
+    max_value = maxArea(num, 5); 
+    printf("max area is %d\n", max_value);
     return 0;
 }
 
-int maxArea(int * nums, int size_num)
+int maxArea(int * height, int heightSize)
 {
     int head = 0;
-    int rear = size_num - 1;
-    int temp_area = 0;
-    int max_area = 0;
+    int rear = heightSize - 1;
+    int tempArea = 0;
+    int maxArea = 0;
 
-    while (rear > head){
-        temp_area = (rear - head) * (nums[head] > nums[rear] ? 
-                    nums[rear] : nums[head]);
-        max_area = max_area >= temp_area ? max_area : temp_area;
+    while (head < rear){
+        tempArea = (rear - head) * (height[head] > height[rear] ? 
+                    height[rear] : height[head]);
+        maxArea = maxArea >= tempArea ? maxArea : tempArea;
 
-        if (nums[head] > nums[rear]){
+        if (height[head] >= height[rear]){
             --rear;
         } else {
             ++head;
         }
     }
 
-    return max_area;
-
-
-    return 0;
+    return maxArea;
 }
