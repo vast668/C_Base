@@ -28,7 +28,8 @@ void * func(void * arg)
 int main()
 {
     int ret = -1;
-    pthread_t pt;
+    pthread_t pt = -1;
+    sem_init(&sem, 0, 0);
     ret = pthread_create(&pt, NULL, func, NULL);
     if (ret != 0){
         printf("pthread create faile\n");
@@ -50,7 +51,7 @@ int main()
         printf("content of strings is %s\n", buf);
         sem_post(&sem);
     }
-    sem_post(&sem);
+    
     printf("wait recycle pthread\n");
 
     ret = pthread_join(pt, NULL);
