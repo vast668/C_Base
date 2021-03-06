@@ -58,7 +58,7 @@ int main()
         printf("pthread_join create faile\n");
         exit(-1);
     }
-
+    sem_destroy(&sem);
     printf("process termination!!!\n");
     return 0;
 }
